@@ -1,4 +1,4 @@
-# 📄 PoC for Exploitation: Stored XSS in SolidInvoice 2.4.0
+# 📄 PoC - Stored XSS via Client Name in Recurring Invoice Module – SolidInvoice 2.4.0
 
 ---
 
@@ -18,7 +18,7 @@
 
 The public demo simulates a real environment for testing purposes.
 
-![Step 1 - Accessing the demo](stored%20xss%20client/imagens/1.png)
+![image](https://github.com/user-attachments/assets/ae4d5c6c-9c39-4c4f-8e2e-c8c51eb98496)
 
 ---
 
@@ -26,7 +26,7 @@ The public demo simulates a real environment for testing purposes.
 
 The vulnerability requires authentication.
 
-![Step 2 - Registering a user](stored%20xss%20client/imagens/2.png)
+![image](https://github.com/user-attachments/assets/0aef3fb8-790c-46d9-8478-5ecf22616a2d)
 
 ---
 
@@ -34,7 +34,7 @@ The vulnerability requires authentication.
 
 We need to create a client that will hold the malicious payload.
 
-![Step 3 - Clicking Add Client](imagens/3.png)
+![image](https://github.com/user-attachments/assets/a6f71960-9fb5-42fb-9ea3-11ca479b828f)
 
 ---
 
@@ -46,7 +46,7 @@ We need to create a client that will hold the malicious payload.
 
 Then, click **Save** to store the client.
 
-![Step 4 - Inserting the XSS payload into the client name](imagens/4.png)
+![image](https://github.com/user-attachments/assets/af20424a-9ff5-4e8d-92b4-0eca4f5baefe)
 
 ---
 
@@ -54,7 +54,7 @@ Then, click **Save** to store the client.
 
 This action allows the creation of invoices that repeat periodically.
 
-![Step 5 - Opening Recurring Invoice creation](imagens/5.png)
+![Step 5 - Opening Recurring Invoice creation](https://github.com/user-attachments/assets/6c91077e-ce5a-410f-885a-5d8449f97d52)
 
 ---
 
@@ -62,7 +62,7 @@ This action allows the creation of invoices that repeat periodically.
 
 The client field will now include the malicious `name`.
 
-![Step 6 - Selecting the payload-bearing client](imagens/6.png)
+![image](https://github.com/user-attachments/assets/48fd75d6-0805-4488-ac5b-f0f58a2ae36e)
 
 ---
 
@@ -70,7 +70,7 @@ The client field will now include the malicious `name`.
 
 All form fields must be filled to persist the entry.
 
-![Step 7 - Saving the Recurring Invoice](imagens/7.png)
+![image](https://github.com/user-attachments/assets/9ed35846-662e-41b6-b759-99adce9b1bfe)
 
 ---
 
@@ -78,7 +78,7 @@ All form fields must be filled to persist the entry.
 
 This list will load the stored client data and render it in the table.
 
-![Step 8 - Navigating to Recurring Invoices List](imagens/8.png)
+![image](https://github.com/user-attachments/assets/8ce20461-c258-4f3e-8f8e-ade916735e04)
 
 ---
 
@@ -86,7 +86,7 @@ This list will load the stored client data and render it in the table.
 
 As expected, the injected JavaScript is rendered unsanitized and executes on page load.
 
-![Step 9 - XSS Triggered on Recurring Invoices List](imagens/9.png)
+![image](https://github.com/user-attachments/assets/250105e5-6f33-4912-9922-8e049c6f949a)
 
 ---
 
@@ -94,6 +94,6 @@ As expected, the injected JavaScript is rendered unsanitized and executes on pag
 
 Any authenticated user accessing the list will trigger the payload.
 
-![Step 10 - Confirming persistent execution](imagens/10.png)
+![image](https://github.com/user-attachments/assets/15baca69-a1cb-4869-a623-b62a9a3caaed)
 
 ---
