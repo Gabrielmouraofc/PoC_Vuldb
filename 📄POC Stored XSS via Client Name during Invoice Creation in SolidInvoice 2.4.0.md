@@ -1,4 +1,4 @@
-
+📄POC Stored XSS via Client Name during Invoice Creation in SolidInvoice 2.4.0
 ---
 
 ## 🕵️‍♂️ Vulnerability Overview
@@ -17,7 +17,7 @@
 
 Public demo access is used to simulate the vulnerability.
 
-![Step 1 - Accessing the demo](stored%20xss%20client/imagens/1.png)
+![image](https://github.com/user-attachments/assets/f95142b1-0b9e-401f-9b35-06d77d0bea68)
 
 ---
 
@@ -25,7 +25,7 @@ Public demo access is used to simulate the vulnerability.
 
 Account registration is required to access invoice-related features.
 
-![Step 2 - Registering an account](stored%20xss%20client/imagens/2.png)
+![image]("https://github.com/user-attachments/assets/f3f01cb0-58c8-45bd-99c8-8b2f7446495a)
 
 ---
 
@@ -33,7 +33,7 @@ Account registration is required to access invoice-related features.
 
 This initiates the process of issuing a new invoice.
 
-![Step 3 - Clicking on Create Invoice](imagens/3.png)
+![image](https://github.com/user-attachments/assets/f991be9b-ae74-4092-afee-3434e23f01d4)
 
 ---
 
@@ -41,7 +41,7 @@ This initiates the process of issuing a new invoice.
 
 Creating a client is mandatory for issuing invoices.
 
-![Step 4 - Adding a new client](imagens/4.png)
+![Step 4 - Adding a new client](https://github.com/user-attachments/assets/e61e329a-f415-48e1-82ea-4ab5f199937f)
 
 ---
 
@@ -49,7 +49,7 @@ Creating a client is mandatory for issuing invoices.
 
 This client will be used for demonstration purposes in the payload.
 
-![Step 5 - Saving the new client](imagens/5.png)
+![Step 5 - Saving the new client](https://github.com/user-attachments/assets/954b390b-1ba2-4444-8b09-83fd9437f253)
 
 ---
 
@@ -57,8 +57,10 @@ This client will be used for demonstration purposes in the payload.
 
 The invoice form should now be available.
 
-![Step 6 - Returning to Create Invoice](imagens/6.png)  
-![Step 6 continued - Clicking Create Invoice again](imagens/7.png)
+
+![image](https://github.com/user-attachments/assets/4bad03d3-d388-45cd-8fb9-d481e8fa6021)  
+![image]([imagens/7.png](https://github.com/user-attachments/assets/cb85e01c-1174-4687-88db-12bde7634a39))
+
 
 ---
 
@@ -70,7 +72,7 @@ The invoice form should now be available.
 
 All mandatory fields must be filled for the payload to be accepted and stored.
 
-![Step 7 - Creating an invoice with an XSS payload](imagens/8.png)
+![image](https://github.com/user-attachments/assets/445f65a6-92d7-4212-b64e-96bce96006fa)
 
 ---
 
@@ -78,7 +80,7 @@ All mandatory fields must be filled for the payload to be accepted and stored.
 
 This is where the XSS will be triggered if the payload is rendered unsanitized.
 
-![Step 8 - Navigating to List Invoices](imagens/9.png)
+![image](https://github.com/user-attachments/assets/bd4192a7-c321-4a92-b3d5-9088cc04c7e1)
 
 ---
 
@@ -86,4 +88,4 @@ This is where the XSS will be triggered if the payload is rendered unsanitized.
 
 The script embedded in the invoice field executes automatically when the page loads, confirming stored XSS.
 
-![Step 9 - XSS executed in /invoice](imagens/10.png)
+![image](https://github.com/user-attachments/assets/fc80ba75-af18-45c0-8910-8f9c047c9ef6)
