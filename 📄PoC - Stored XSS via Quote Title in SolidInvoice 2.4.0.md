@@ -1,5 +1,4 @@
-# 📄 PoC for Exploitation: Stored XSS in SolidInvoice 2.4.0
-
+📄PoC - Stored XSS via Quote Title in SolidInvoice 2.4.0
 
 ---
 
@@ -19,7 +18,7 @@
 
 This instance replicates production features and allows authenticated testing.
 
-![Step 1 - Accessing the demo environment](stored%20xss%20client/imagens/1.png)
+![image](https://github.com/user-attachments/assets/2a58d016-6865-4c8c-8150-57b6e249e71a)
 
 ---
 
@@ -27,7 +26,7 @@ This instance replicates production features and allows authenticated testing.
 
 This allows full access to client, quote, and tax modules.
 
-![Step 2 - User registration](stored%20xss%20client/imagens/2.png)
+![image](https://github.com/user-attachments/assets/ce902677-61dd-434c-b2e3-46f92be6240b)
 
 ---
 
@@ -35,7 +34,7 @@ This allows full access to client, quote, and tax modules.
 
 This leads to the quote creation interface, where user input is later rendered in the quote list.
 
-![Step 3 - Navigating to Create Quote](imagens/3.png)
+![image](https://github.com/user-attachments/assets/9ac796a5-9a7a-451b-bcdc-7724faafffec)
 
 ---
 
@@ -47,7 +46,7 @@ This leads to the quote creation interface, where user input is later rendered i
 
 No sanitization is applied to this field, which leads to the payload being stored as-is.
 
-![Step 4 - Inserting the payload and submitting the form](imagens/4.png)
+![image](https://github.com/user-attachments/assets/61bb8d35-41a9-4180-801f-8306a88b58e0)
 
 ---
 
@@ -55,7 +54,7 @@ No sanitization is applied to this field, which leads to the payload being store
 
 The script is now stored in the system and will be executed upon rendering the quote list.
 
-![Step 5 - Confirming the payload is stored](imagens/5.png)
+![image](https://github.com/user-attachments/assets/b2a920d0-cd06-46ce-ba8d-b4a4fb112ebb)
 
 ---
 
@@ -63,4 +62,4 @@ The script is now stored in the system and will be executed upon rendering the q
 
 The malicious script injected in the quote's `name` is rendered in the DOM without sanitization, causing client-side code execution for any user who views the list.
 
-![Step 6 - Stored XSS triggers on /quotes](imagens/6.png)
+![image](https://github.com/user-attachments/assets/79277b81-5560-4ca3-a052-31281a9d7e9f)
