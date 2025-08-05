@@ -1,4 +1,4 @@
-#📄PoC - Stored XSS via Quote Title in SolidInvoice 2.4.0
+# 📄PoC - Stored XSS via Quote Title in SolidInvoice 2.4.0
 
 ---
 
